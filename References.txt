@@ -1,0 +1,4 @@
+https://cryptography.io/en/latest/hazmat/primitives/symmetric-encryption/   (Symmetric Encryption)
+https://elc.github.io/python-security/chapters/06_Symmetric_Encryption.html (Symmetric Encryption Example)
+https://cryptography.io/en/latest/hazmat/primitives/padding/#               (PKCS7 Padding)
+https://www.educba.com/python-object-serialization/                         (Serializing Byte Object)
