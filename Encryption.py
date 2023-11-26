@@ -46,7 +46,7 @@ serialization_pem("Public", public_pem)
 with open("aes_keys.json", "wb") as aes_key_file:
 
     data_bytes = pickle.dumps(aes_key)
-    print(f"Original Data 'Object': {data_bytes}")
+    print(f"Original Data 'Object': {data_bytes}\n")
     encrypted_aes_key = encrypt_data(public_key, data_bytes)
     print(f"Encrypted Data 'Object': {encrypted_aes_key}\n\n")
     aes_key_file.write(encrypted_aes_key)

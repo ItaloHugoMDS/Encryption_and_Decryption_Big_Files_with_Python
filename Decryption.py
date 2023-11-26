@@ -14,10 +14,10 @@ with open("aes_keys.json", "rb") as file:
 
     data = file.read()
     data_bytes = decrypt_data(private_key, data)
-    print(f"Original Data 'Object': {data_bytes}")
+    print(f"Original Data 'Object': {data_bytes}\n")
     print(f"Encrypted Data 'Object': {data}\n\n")
     decrypted_data = pickle.loads(data_bytes)
 
 
-print(f"Key: {decrypted_data['key'].hex()}")
-print(f"IV: {decrypted_data['iv'].hex()}\n\n")
+print(f"Decrypted Key: {decrypted_data['key'].hex()}")
+print(f"Decrypted IV: {decrypted_data['iv'].hex()}\n\n")
