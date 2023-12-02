@@ -19,7 +19,7 @@ with open("aes_keys.json", "rb") as file:   # Deserializing the AES Key:
 print(f"Decrypted Key: {decrypted_key['key'].hex()}")
 print(f"Decrypted IV: {decrypted_key['iv'].hex()}\n\n")
 
-encrypted_data = reading_file("Screenshot_2023-11-26_13_31_44_(encrypted).png")    # Loading encrypted data into memory.
+encrypted_data = reading_file("Screenshot_2023-11-26_13_31_44.png")    # Loading encrypted data into memory.
 
 cipher = Cipher(    # Creating the cipher object.
     algorithm=algorithms.AES256(key=decrypted_key["key"]),  # Using the decrypted AES Key.
@@ -36,5 +36,23 @@ unpadder = pd.PKCS7(128).unpadder()    # Generating the unpadding object.
 decrypted_message = unpadder.update(padded_message) + unpadder.finalize()   # Unpadding the message, generating the full
 # decrypted data.
 
-writing_file("Screenshot_2023-11-26_13_31_44_(decrypted).png", decrypted_message)   # Writing the decrypted data
+writing_file("Screenshot_2023-11-26_13_31_44.png", decrypted_message)   # Writing the decrypted data
 # into the original file.
+
+
+def main():
+    if len(sys.argv) < 3 or len(sys.argv) > 7:  # Ensuring the correct number of arguments was passed.
+        print(f"Usage: python3 Decryption.py [File_To_Be_Decrypted] [Private_Key_Password]\n\n")
+        print(f"OPTIONAL - Usage: python3 Decryption.py [File_To_Be_Decrypted] [Private_Key_Password] "
+              f"[Decrypted_File_Name] [Private_PEM_File] [AES_Key_File]\n\n")
+        print(f"The default values: \n\n"
+              f"\t\t[Private_PEM_File] = Private.PEM (If not specified, the program assumes the default name)\n\n"
+              f"\t\t[AES_Key_File] = AES_Keys.json (If not specified, the program assumes the default name)\n\n"
+              f"\t\t[Decrypted_File_Name] = Original-encrypted-file-name.original-extension\n\n"
+              f"\t\tATTENTION: If a name for the output file is not provided, the original file will be OVERWRITTEN "
+              f"with the decrypted data.")
+        exit(1)
+
+
+if __name__ == '__main__':
+    main()
