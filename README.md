@@ -20,6 +20,8 @@ This project contains the **tools** and a **skill showcase**:
 
 The project works by using two scripts, one for encrypting the file and the other for decrypting it.  
 
+### Encryption  
+
 The process of encryption starts by loading the data-to-be-encrypted into the program memory. After loading the data
 into memory, the symmetric and asymmetric keys are generated. For the symmetric encryption, a *key* is generated as a
 random 256-bit value and another random 128-bit value is also generated to be used as the *initialization vector*,
@@ -43,6 +45,8 @@ The first step for AES *keys* encryption is to transform the Python object into 
 object is then encrypted using the RSA *private key* encryption, and the encrypted data is serialized as a *json* file.
 The following steps are the serialization of the RSA *keys*, which are serialized using the **PEM** encoding, as a
 traditional **OpenSSH** format and using the **AES-256-CBC** as the encryption algorithm for the *private key*.  
+
+### Decryption  
 
 The decryption process is much simpler and follows just a few steps. The first step, it's to load encrypted data into
 the program memory. After this, the next step is to deserialize the RSA *private key* and load it into program memory.
