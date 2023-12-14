@@ -44,7 +44,16 @@ object is then encrypted using the RSA *private key* encryption, and the encrypt
 The following steps are the serialization of the RSA *keys*, which are serialized using the **PEM** encoding, as a
 traditional **OpenSSH** format and using the **AES-256-CBC** as the encryption algorithm for the *private key*.  
 
-The decryption process is much simpler and follows just a few steps. The first one
+The decryption process is much simpler and follows just a few steps. The first step, it's to load encrypted data into
+the program memory. After this, the next step is to deserialize the RSA *private key* and load it into program memory.
+To complete the decryption process, the AES *keys* need to be deserialized and also loaded into program memory.  
+
+The AES *keys* deserialization starts by loading the encrypted content of the json file into memory. After loaded, the
+data is decrypted using the RSA *private key*, and the byte object is turned back into a Python object, which contains
+the AES *key* and *iv* that will be used for decrypting the file.  
+
+Finalizing the decryption process, the file's data is decrypted, using the previously deserialized AES *keys*, and
+unpadded. After the decryption process, the data is written back into the original encrypted file.  
 
 ---
 
