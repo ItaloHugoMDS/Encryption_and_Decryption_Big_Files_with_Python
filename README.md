@@ -81,15 +81,23 @@ pip3 install -r requirements.txt
 
 After the library installation, the tools are ready to be used.  
 
-The **encryption** can be done by using the [`encryption.py`][] file, which will require the `python3` command to be
-executed, following the syntax:  
+The **encryption** can be done by using the [`encryption.py`][file2] file, which will require the `python3` command to
+be executed, following the syntax:  
 
 ```
 python3 encryption.py [File_To_Be_Encrypted] [RSA_Private_Key_Password] [Encrypted_File_Name] [RSA_Private_Key_Name] [RSA_Public_Key_Name] [AES_Key_File_Name]
 ```
 
-The **encryption** process can also be done by making use of the `encryption` file, which can be placed within the
-`/bin` 
+The **encryption** process can also be done by making use of the [`encryption`][file3] file, which can be placed within
+the `/bin` directory and executed anywhere on the linux terminal. The file follows the syntax:  
+
+```
+./encryption [File_To_Be_Encrypted] [RSA_Private_Key_Password] [Encrypted_File_Name] [RSA_Private_Key_Name] [RSA_Public_Key_Name] [AES_Key_File_Name]
+```
+
+Both files make use of the same arguments which are the following:  
+
+- 
 
 ---
 
@@ -107,4 +115,5 @@ Here will come a list of references.
 [tools]: https://github.com/ItaloHugoMDS/Encryption_and_Decryption_Big_Files_with_Python?tab=readme-ov-file#how-to-use
 [showcase]: https://github.com/ItaloHugoMDS/Encryption_and_Decryption_Big_Files_with_Python?tab=readme-ov-file#showcase
 [file1]: https://github.com/ItaloHugoMDS/Encryption_and_Decryption_Big_Files_with_Python/blob/main/requirements.txt
-[file2]: 
+[file2]: https://github.com/ItaloHugoMDS/Encryption_and_Decryption_Big_Files_with_Python/blob/main/encryption.py
+[file3]: https://github.com/ItaloHugoMDS/Encryption_and_Decryption_Big_Files_with_Python/blob/main/encryption
