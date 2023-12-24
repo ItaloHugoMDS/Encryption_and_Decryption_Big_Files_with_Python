@@ -100,7 +100,7 @@ Both files make use of the same arguments. The following arguments are **require
 - **[File_To_Be_Encrypted]:** The file that will be encrypted.  
 - **[RSA_Private_Key_Password]:** This will be the password for the RSA **private** key used for decrypting the files.  
 
-The following arguments are **optional** arguments:  
+The next arguments are **optional** arguments:  
 
 - **[Encrypted_File_Name]:** This will be the output for the encrypted file. If this argument is provided, the original
 file will be preserved and the encrypted data will be written within a new file. **This argument doesn't affect the file
