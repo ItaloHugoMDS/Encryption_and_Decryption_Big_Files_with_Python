@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives import padding as pd
@@ -127,7 +125,7 @@ def encrypt_data(public_key, data):    # Encrypting the data.
         plaintext=data,
 
         # Padding is a way, used in encryption, to extend the cipher text, so it will match the block size of the hash.
-        padding=padding.OAEP(  # OAEP (Optimal Asymmetric Encryption Padding) is recommended for RSA encryption.
+        padding=padding.OAEP(  # OAEP (Optimal Asymmetric encryption Padding) is recommended for RSA encryption.
 
             # MFG (Mask Generation Function) will create a mask with the same size of the inputted data.
             mgf=padding.MGF1(algorithm=hashes.SHA256()),
@@ -178,8 +176,8 @@ def writing_files(filename, content):   # Writing encrypted file.
 def main():
 
     if len(sys.argv) < 3 or len(sys.argv) > 7:  # Ensuring the correct number of arguments was passed.
-        print(f"Usage: python3 Encryption.py [File_To_Be_Encrypted] [RSA_Private_Key_Password]\n\n")
-        print(f"OPTIONAL - Usage: python3 Encryption.py [File_To_Be_Encrypted] [RSA_Private_Key_Password] "
+        print(f"Usage: python3 encryption.py [File_To_Be_Encrypted] [RSA_Private_Key_Password]\n\n")
+        print(f"OPTIONAL - Usage: python3 encryption.py [File_To_Be_Encrypted] [RSA_Private_Key_Password] "
               f"[Encrypted_File_Name] [RSA_Private_Key_Name] [RSA_Public_Key_Name] [AES_Key_File_Name]\n\n")
         print(f"The default values for the OPTIONALS: \n\n"
               f"\t\t[RSA_Private_Key_Name] = Private.pem (Format is not optional)\n\n"

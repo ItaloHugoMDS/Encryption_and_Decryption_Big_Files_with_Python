@@ -98,8 +98,8 @@ def loading_pem_file(filename, password):   # Loading the Private Key into memor
 
 def main():
     if len(sys.argv) < 3 or len(sys.argv) > 7:  # Ensuring the correct number of arguments was passed.
-        print(f"Usage: python3 Decryption.py [File_To_Be_Decrypted] [RSA_Private_Key_Password]\n\n")
-        print(f"OPTIONAL - Usage: python3 Decryption.py [File_To_Be_Decrypted] [RSA_Private_Key_Password] "
+        print(f"Usage: ./decryption [File_To_Be_Decrypted] [RSA_Private_Key_Password]\n\n")
+        print(f"OPTIONAL - Usage: ./decryption [File_To_Be_Decrypted] [RSA_Private_Key_Password] "
               f"[Decrypted_File_Name] [RSA_Private_PEM_File_Name] [AES_Key_File]\n\n")
         print(f"The default values for the OPTIONALS: \n\n"
               f"\t\t[RSA_Private_PEM_File_Name] = Private.pem (If not specified, the program assumes the default name)\n\n"

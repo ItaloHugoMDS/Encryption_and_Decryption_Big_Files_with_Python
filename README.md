@@ -63,7 +63,33 @@ unpadded. After the decryption process, the data is written back into the origin
 
 ## How to use  
 
-Here will come an explanation on how to use the tools.  
+To use the tools, you can either download each file individually or you can clone this repository by executing the
+following command:  
+
+```
+git clone https://github.com/ItaloHugoMDS/Encryption_and_Decryption_Big_Files_with_Python.git
+```
+
+First thing to be done before using the tools, it's to download the necessary libraries. To perform this step, the
+[requirements.txt][file1] should be installed using `pip3`.  
+
+Execute the following command to perform the installation:
+
+```
+pip3 install -r requirements.txt
+```
+
+After the library installation, the tools are ready to be used.  
+
+The **encryption** can be done by using the [`encryption.py`][] file, which will require the `python3` command to be
+executed, following the syntax:  
+
+```
+python3 encryption.py [File_To_Be_Encrypted] [RSA_Private_Key_Password] [Encrypted_File_Name] [RSA_Private_Key_Name] [RSA_Public_Key_Name] [AES_Key_File_Name]
+```
+
+The **encryption** process can also be done by making use of the `encryption` file, which can be placed within the
+`/bin` 
 
 ---
 
@@ -80,3 +106,5 @@ Here will come a list of references.
 [link1]: https://github.com/ItaloHugoMDS/Encryption_and_Decryption_with_Python
 [tools]: https://github.com/ItaloHugoMDS/Encryption_and_Decryption_Big_Files_with_Python?tab=readme-ov-file#how-to-use
 [showcase]: https://github.com/ItaloHugoMDS/Encryption_and_Decryption_Big_Files_with_Python?tab=readme-ov-file#showcase
+[file1]: https://github.com/ItaloHugoMDS/Encryption_and_Decryption_Big_Files_with_Python/blob/main/requirements.txt
+[file2]: 
