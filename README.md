@@ -157,9 +157,25 @@ Here will come a showcase for the tools.
 
 ## References  
 
-Here will come a list of references.  
+This project was only made possible due to the following references:  
+
+- [Symmetric Encryption][ref1]: *cryptography.io*  
+- [Symmetric Encryption Example][ref2]: *elc.github.io*  
+- [Symmetric Padding][ref3]: *cryptography.io*  
+- [Python Object Serialization][ref4]: *educba.com*  
+
+To the authors of those articles and websites, my deepest and sincere, thank you. Thank you for providing me with the
+concepts and knowledge necessary so that I could make my ideas into something real.  
+
+#### *"If I have seen further it is by standing on the shoulders of Giants."* Isaac Newton (1642-1727)  
+
+---
 
 [link1]: https://github.com/ItaloHugoMDS/Encryption_and_Decryption_with_Python
+[ref1]: https://cryptography.io/en/latest/hazmat/primitives/symmetric-encryption/ "Symmetric Encryption"
+[ref2]: https://elc.github.io/python-security/chapters/06_Symmetric_Encryption.html "Symmetric Encryption Example"
+[ref3]: https://cryptography.io/en/latest/hazmat/primitives/padding/# "PKCS7 Padding"
+[ref4]: https://www.educba.com/python-object-serialization/ "Serializing Byte Object"
 [tools]: https://github.com/ItaloHugoMDS/Encryption_and_Decryption_Big_Files_with_Python?tab=readme-ov-file#how-to-use
 [showcase]: https://github.com/ItaloHugoMDS/Encryption_and_Decryption_Big_Files_with_Python?tab=readme-ov-file#showcase
 [file1]: https://github.com/ItaloHugoMDS/Encryption_and_Decryption_Big_Files_with_Python/blob/main/requirements.txt
