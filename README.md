@@ -105,16 +105,47 @@ The next arguments are **optional** arguments:
 - **[Encrypted_File_Name]:** This will be the output for the encrypted file. If this argument is provided, the original
 file will be preserved and the encrypted data will be written within a new file. **This argument doesn't affect the file
 extension**, a new file will be created with the name provided, but the file extension will be the same as the original
-file. **By default**, the original file will be overwritten with the encrypted data.  
+file. (**By default**, the original file will be overwritten with the encrypted data.)  
 - **[RSA_Private_Key_Name]:** This argument will change the name of the serialized **RSA private key**. **This argument
-doesn't affect the file extension**, the RSA key will be serialized as a **PEM** file. **By default**, this file will be
-named **Private.pem**.  
+doesn't affect the file extension**, the RSA key will be serialized as a **PEM** file. (**By default**, this file will be
+named **Private.pem**.)  
 - **[RSA_Public_Key_Name]:** This argument will change the name of the serialized **RSA public key**. **This argument
-doesn't affect the file extension**, the RSA key will be serialized as a **PEM** file. **By default**, this file will be
-named **Public.pem**.  
+doesn't affect the file extension**, the RSA key will be serialized as a **PEM** file. (**By default**, this file will be
+named **Public.pem**.)  
 - **[AES_Key_File_Name]:** This argument will change the name of the serialized **AES keys**, which contain the RSA
 encrypted AES *key* and *initialization vector*. **This argument doesn't affect the file extension**, the AES key will
-be saved as a json file. **By default**, the file will be named **AES_Keys.json**.  
+be saved as a json file. (**By default**, the file will be named **AES_Keys.json**.)  
+
+The **decryption** process can be done by using the [`decryption.py`][file4] file, which needs the `python3` command to
+be executed. This file requires the following syntax:  
+
+```
+python3 decryption.py [File_To_Be_Decrypted] [RSA_Private_Key_Password] [Decrypted_File_Name] [RSA_Private_PEM_File_Name] [AES_Key_File]
+```
+
+This process can also be done by using the [`decription`][file5] file, which can also be place inside `/bin` directory
+and executed anywhere within the Linux terminal. The syntax for this file is the following:  
+
+```
+./decryption [File_To_Be_Decrypted] [RSA_Private_Key_Password] [Decrypted_File_Name] [RSA_Private_PEM_File_Name] [AES_Key_File]
+```
+
+Both decryption files make use of the same arguments. The following are the **required** ones:  
+
+- **[File_To_Be_Decrypted]:** This will the file to be decrypted.  
+- **[RSA_Private_Key_Password]:** This will be the same password used for the **encryption** process.  
+
+The next arguments are **optional** ones, they are the following:  
+
+- **[Decrypted_File_Name]:** This will be the output for the decrypted file. If this argument is provided, the original
+encrypted file will be preserved and the decrypted data will be written within a new file. **This argument doesn't
+affect the file extension**, a new file will be created with the name provided, but the file extension will be the same
+as the original encrypted file. (**By default**, the original file will be overwritten with the encrypted data.)  
+- **[RSA_Private_PEM_File_Name]:** This argument only needs to be provided if the **default value** of the **RSA private
+key** file was modified in the **encryption** process. (**By default** the program will look for the **Private.pem**
+file).  
+- **[AES_Key_File]:** This argument only needs to be provided if the **default value** of the **AES Keys** file was
+modified in the **encryption** process. (**By default** the program will look for the **AES_Keys.json** file).  
 
 ---
 
@@ -134,3 +165,5 @@ Here will come a list of references.
 [file1]: https://github.com/ItaloHugoMDS/Encryption_and_Decryption_Big_Files_with_Python/blob/main/requirements.txt
 [file2]: https://github.com/ItaloHugoMDS/Encryption_and_Decryption_Big_Files_with_Python/blob/main/encryption.py
 [file3]: https://github.com/ItaloHugoMDS/Encryption_and_Decryption_Big_Files_with_Python/blob/main/encryption
+[file4]: https://github.com/ItaloHugoMDS/Encryption_and_Decryption_Big_Files_with_Python/blob/main/decryption.py
+[file5]: https://github.com/ItaloHugoMDS/Encryption_and_Decryption_Big_Files_with_Python/blob/main/decryption
