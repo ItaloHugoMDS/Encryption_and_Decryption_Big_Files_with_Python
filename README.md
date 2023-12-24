@@ -95,9 +95,26 @@ the `/bin` directory and executed anywhere on the linux terminal. The file follo
 ./encryption [File_To_Be_Encrypted] [RSA_Private_Key_Password] [Encrypted_File_Name] [RSA_Private_Key_Name] [RSA_Public_Key_Name] [AES_Key_File_Name]
 ```
 
-Both files make use of the same arguments which are the following:  
+Both files make use of the same arguments. The following arguments are **required** for the encryption process:  
 
-- 
+- **[File_To_Be_Encrypted]:** The file that will be encrypted.  
+- **[RSA_Private_Key_Password]:** This will be the password for the RSA **private** key used for decrypting the files.  
+
+The following arguments are **optional** arguments:  
+
+- **[Encrypted_File_Name]:** This will be the output for the encrypted file. If this argument is provided, the original
+file will be preserved and the encrypted data will be written within a new file. **This argument doesn't affect the file
+extension**, a new file will be created with the name provided, but the file extension will be the same as the original
+file. **By default**, the original file will be overwritten with the encrypted data.  
+- **[RSA_Private_Key_Name]:** This argument will change the name of the serialized **RSA private key**. **This argument
+doesn't affect the file extension**, the RSA key will be serialized as a **PEM** file. **By default**, this file will be
+named **Private.pem**.  
+- **[RSA_Public_Key_Name]:** This argument will change the name of the serialized **RSA public key**. **This argument
+doesn't affect the file extension**, the RSA key will be serialized as a **PEM** file. **By default**, this file will be
+named **Public.pem**.  
+- **[AES_Key_File_Name]:** This argument will change the name of the serialized **AES keys**, which contain the RSA
+encrypted AES *key* and *initialization vector*. **This argument doesn't affect the file extension**, the AES key will
+be saved as a json file. **By default**, the file will be named **AES_Keys.json**.  
 
 ---
 
